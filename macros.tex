@@ -1,0 +1,6 @@
+\newcommand{\insertForSmartphone}[1]{}
+
+\newcommand{\compileForSmartphone}{
+	\renewcommand{\insertForSmartphone}[1]{##1}
+	\usepackage[a6paper,margin=5mm]{geometry}
+}
