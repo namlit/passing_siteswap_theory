@@ -5,7 +5,7 @@
 
 \documentclass[a4paper,12pt,parskip=full]{scrreprt}
 
-%\compileForSmartphone
+\compileForSmartphone
 
 \usepackage{acronym}
 \usepackage{amsmath}
@@ -14,19 +14,23 @@
 \usepackage{calc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage[colorlinks=true]{hyperref}
 \usepackage{ifthen}
 \usepackage[utf8]{inputenc}
 %\usepackage[ngerman]{babel}
 \usepackage{marvosym}
 \usepackage{mathtools}
 \usepackage{microtype}
-\usepackage[colorlinks=false]{hyperref}
+\usepackage{pythontex}
 \usepackage{setspace}
 \usepackage{subcaption}
 \usepackage{tabu}
 \usepackage{textcomp}
+\usepackage{thmtools}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{tikz}
+
+\newtheorem{definition}{Definition}
 
 %\usepackage{csquotes}
 %\usepackage[backend=biber,style=numeric-comp,sorting=none,maxnames=8,minnames=8,abbreviate=false]{biblatex} %sorting=nyt
@@ -52,10 +56,53 @@
 	\maketitle
 	
 	\tableofcontents
-
+	
+	
 %	\include{basics}
 	
 	\chapter{Siteswap Basics}
+	
+	Siteswaps are a mathematical notation for juggling patterns. This chapter will give a short introduction to siteswaps. Throughout the internet, lots of information about two handed siteswaps is available and will therefore not fully be covered within this document.
+	
+	\section{Ladder Diagrams}
+	
+	
+	
+	\section{Vanilla Siteswaps}
+	
+	The simplest form of juggling patterns, consists of one juggler, throwing objects into the air with both hand. The following assumptions can be made.
+	
+	\begin{enumerate}
+		\item The juggling pattern is juggled by one juggler with two hands
+		\item The juggler throws objects alternating from the right hand and the left hand
+		\item The juggler does not throw more than one object at a time
+		\item The juggler does not catch more than one object at the same time
+	\end{enumerate}
+
+	Patterns like that can be described with Vanilla Siteswaps. 
+	
+	\begin{definition}[Siteswap]
+		A siteswap is a series of numbers describing the order objects are thrown in a juggling pattern. Each number $n$ specifies after how many throws an object is thrown again. This means, $n-1$ other throws happen, before the same object is thrown again.
+	\end{definition}
+
+	In a normal cascade, all object are thrown one after another in the same order at the same height. This means, that all numbers in the siteswap are the same. A normal three ball cascade therefore would be a \siteswap[\onejugger]{333}. A siteswap only describes the order the objects are thrown in. Therefore a three ball cascade, a reverse cascade and a three ball mills mess all have the same siteswap \siteswap[\onejugger]{333}, as the balls are always thrown in the same order.
+	
+	- Average
+	
+	- 
+
+	\begin{definition}[Number Of Objects]
+	The number of objects in a siteswap is the average of the numbers in the siteswap.
+	\end{definition}
+
+%	\begin{python}
+%		print('Hello')
+%	\end{python}
+
+	\siteswap[\onejugger]{531}
+
+	\section{Ladder Diagrams}
+	
 	- Ladder Diagram (with time axis)
 	- Siteswap: average, 
 	- Causal Diagram
@@ -64,6 +111,7 @@
 	- No informationabout number of hands
 	- 4444 with three hands
 	- Default hand numbering for two person passing patterns
+	- hand numbering implicitely defined
 	- List with standard passing throws
 	Satz: Global Beat
 	Local vs. Global Siteswaps
@@ -76,6 +124,7 @@
 	 - period can be divided by 4 -> unsymmetrical pattern
 	\subsection{Compatible Patterns}
 	 - Interfaces
+	 - Interface backwards
 	 - Why not against 6789a
 	\subsection{Compatible Feeds}
 	\subsubsection{Number of passes in a siteswap}
@@ -83,12 +132,21 @@
 	\section{Asynchronous Patterns with more than two jugglers}
 	- changes: period length, ...
 	\chapter{Synchronous Siteswaps}
+	- Introduction: first passing patterns synchronous
+	- 4413 -> (4.2x)(2x,4)
+	- order vs. timing
 	- right hands synchronous -> two-count
 	- right hand and left hand synchronous -> 7-club two count
+	- Properties:
+	    - period length: always global period
+	    - different meaning of same number for A/B
+	Other Beats:
 	- each juggler synchronous -> techno
 	- all hand synchronous -> 8 club singles (two-count)
 	
-	- very interesting for more than two juggers
+	- more than two juggers
+	- Synchronous Feeds
+	- Global Siteswap of Compatible Feeds
 	
 	\section{Introduction to synchronous Siteswaps}
 	- 7566  ->  6.5  5.5  6  6  -> 6pb6p 6 6
@@ -103,5 +161,6 @@
 	- 4-count feed or pps-feed
 	\subsection{Asyncronous Feeds}
 	77772 against why not
-
+	
+	
 \end{document}          
