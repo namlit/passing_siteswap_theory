@@ -5,7 +5,7 @@
 
 \documentclass[a4paper,12pt,parskip=full]{scrreprt}
 
-\compileForSmartphone
+%\compileForSmartphone
 
 \usepackage{acronym}
 \usepackage{amsmath}
@@ -14,7 +14,7 @@
 \usepackage{calc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
-\usepackage[colorlinks=true]{hyperref}
+\usepackage[colorlinks=false,urlbordercolor={1 1 1}]{hyperref}
 \usepackage{ifthen}
 \usepackage[utf8]{inputenc}
 %\usepackage[ngerman]{babel}
@@ -29,6 +29,8 @@
 \usepackage{thmtools}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{tikz}
+\usepackage{qrcode}
+\usepackage{easy-todo}
 
 \newtheorem{definition}{Definition}
 
@@ -62,11 +64,15 @@
 	
 	\chapter{Siteswap Basics}
 	
-	Siteswaps are a mathematical notation for juggling patterns. This chapter will give a short introduction to siteswaps. Throughout the internet, lots of information about two handed siteswaps is available and will therefore not fully be covered within this document.
+	Siteswaps are a mathematical notation for juggling patterns. This chapter will give a short introduction to Siteswaps. Throughout the internet, lots of information about two handed Siteswaps is available and will therefore not fully be covered within this document.
 	
 	\section{Ladder Diagrams}
 	
+	The probably most intuitive notation of juggling Patterns are ladder diagrams. The movement of every object is drawn over time, viewed from above. The Ladder diagram of a three ball cascade is shown in \todo{ref ladder diagram}.
 	
+	\todo{insert ladder diagram}
+	
+	Ladder diagrams have the benefit of accurately describing the timing and trajectory of every object. Asynchronous patterns can be drawn as well es synchronous patters and transitions. However, many juggling patterns are thrown in a consistent beat where the timing between two throws always is about the same and all hands are used in a never changing order. In this case it is easier to describe the order of throws with numbers instead of graphically drawing throws as ladder diagrams. One throw in a ladder diagram corresponds to one beat in a juggling pattern and the number of beats until an object is thrown again can be used to describe the order (and indirectly the high) of objects in a juggling pattern. A complex pattern can be reduced to a series of numbers, where the average of number corresponds to the number of objects in the pattern. This representation is called Siteswap notation and has the benefit of being mathematically describable and computable.
 	
 	\section{Vanilla Siteswaps}
 	
@@ -85,36 +91,73 @@
 		A siteswap is a series of numbers describing the order objects are thrown in a juggling pattern. Each number $n$ specifies after how many throws an object is thrown again. This means, $n-1$ other throws happen, before the same object is thrown again.
 	\end{definition}
 
-	In a normal cascade, all object are thrown one after another in the same order at the same height. This means, that all numbers in the siteswap are the same. A normal three ball cascade therefore would be a \siteswap[\onejugger]{333}. A siteswap only describes the order the objects are thrown in. Therefore a three ball cascade, a reverse cascade and a three ball mills mess all have the same siteswap \siteswap[\onejugger]{333}, as the balls are always thrown in the same order.
+	In a normal cascade, all object are thrown one after another in the same order at the same height. This means, that all numbers in the Siteswap are the same. A normal three ball cascade therefore would be a \siteswap[\onejugger]{333}. A Siteswap only describes the order objects are thrown in. Therefore a three ball cascade, a reverse cascade and a three ball mills mess all have the same siteswap \siteswap[\onejugger]{333}, as the balls are always thrown in the same order.
 	
-	- Average
+	A Siteswap can be repeated infinitely. Therefore the Siteswap \siteswap[\onejugger]{531} and \siteswap[\onejugger]{531531} are the same. 
 	
-	- 
-
-	\begin{definition}[Number Of Objects]
-	The number of objects in a siteswap is the average of the numbers in the siteswap.
+	\begin{definition}[Period Length]
+		The length of the sequence of numbers in a Siteswap before repeating itself is called the period length of a Siteswap.
 	\end{definition}
 
-%	\begin{python}
-%		print('Hello')
-%	\end{python}
+	\subsection{Mathematical Rules of Vanilla Siteswaps}
+	
+	Siteswaps can be mathematically described and computed. In particular the following rules apply to vanilla Siteswaps:
+	
+	\begin{itemize}
+		\item The number of objects in a Siteswap is the average of all number in the Siteswap
+		\item When the period length of a Siteswap is added to a number in a Siteswap, the resulting sequence of numbers is a valid Siteswap again.
+		\item When two numbers are swapped in a Siteswap and the distance between those numbers is added to the first number (after swapping) and subtracted from the second number, the resulting juggling pattern is a valid Siteswap again.
+	\end{itemize}
 
-	\siteswap[\onejugger]{531}
-
-	\section{Ladder Diagrams}
+	
+	\qrsiteswap{86277}
+	
+	
+	
+	\chapter{Introduction to Passing Sitewaps}
+	
+	As described above a Siteswap contains information about the order objects are thrown in and the number of objects in a pattern. However, the number and order of hands can only be described in a ladder diagram, but not in a Siteswap. For example the normal 4-ball fountain can be described as Siteswap \siteswap[\onejugger]{4444} as shown in \todo{ref ladder}.
+	
+	\todo{insert ladder 4444}
+	
+	The same Siteswap could be juggled by three hands (and two jugglers) instead of two hands. By defining the base pattern to be three handed with all hands having a asynchronous beat the pattern shown in ladder diagram \todo{ref ladder} generated.
+	
+	\todo{Ladder Diagram 444 with three hands}
+	
+	The resulting pattern looks more like a three-ball cascade than a four ball fountain, even if the Siteswap is still \siteswap[\onejugger]{4444}.
+	
+	\section{4-handed Siteswaps}
+	
+	A typical passing pattern consists of two jugglers with four hands. The easiest
+	
+	\begin{definition}[4-handed Siteswap]
+		A 4-handed Siteswap is a Siteswap juggled by two jugglers A and B with four hands. The two jugglers throw objects asynchronously alternating between juggler A and B. Each juggler uses the right and left hand alternating. The order of hands is therefore $A_R B_R A_L B_L$.
+	\end{definition}
+	
+	\todo{picture: A and B with Hand numbering}
+	
+	\subsection{Global Siteswaps vs. Local Siteswaps}
+	
+	
+	- List with standard passing throws
+		- no 3
+	
+	definition 4.handed siteswap
+		- order: RRLL
+		- asynchronous
+	
+	Satz: Global Beat
+	
 	
 	- Ladder Diagram (with time axis)
 	- Siteswap: average, 
 	- Causal Diagram
 	Satz: Local Beat
-	\chapter{Introduction to Passing Sitewaps}
-	- No informationabout number of hands
-	- 4444 with three hands
-	- Default hand numbering for two person passing patterns
-	- hand numbering implicitely defined
-	- List with standard passing throws
-	Satz: Global Beat
+	
 	Local vs. Global Siteswaps
+	
+	\section{Causal Diagrams}
+	
 	\section{Getins/Getouts}
 	\section{Determine Starting Position}
 	\section{Period Length}
@@ -162,5 +205,6 @@
 	\subsection{Asyncronous Feeds}
 	77772 against why not
 	
+	\listoftodos
 	
 \end{document}          

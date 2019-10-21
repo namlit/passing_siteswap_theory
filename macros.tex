@@ -5,7 +5,16 @@
 	\usepackage[a6paper,margin=5mm]{geometry}
 }
 
+\newcommand{\qrcodesize}{3cm}
 \newcommand{\siteswap}[2][2.1.0]{\href{https://siteswap.de/v1.0.0/#2.#1}{\textit{#2}}}
+\newcommand{\qrsiteswap}[2][2.1.0]{
+	\centering
+	\parbox{\qrcodesize}{
+		\centering
+		\qrcode[height=\qrcodesize]{https://siteswap.de/v1.0.0/#2.#1}\newline\vfil
+		\Large\textbf{\siteswap[#1]{#2}}
+	}
+}
 \newcommand{\sync}{2.2.0}
 \newcommand{\onejugger}{1.1.0}
 
